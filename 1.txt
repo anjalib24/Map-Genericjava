@@ -1,0 +1,72 @@
+In Java, a `Map` is an interface that represents a collection of key-value pairs, where each key is unique and maps to exactly one value. It is part of the Java Collections Framework and provides a way to store and retrieve data in a key-value format.
+
+### **Key Characteristics of `Map`**
+
+1. **Key-Value Pairs**:
+   - A `Map` stores data as key-value pairs. Each key maps to a specific value, and each key must be unique within the `Map`.
+
+2. **Uniqueness of Keys**:
+   - Keys in a `Map` are unique. If you try to insert a new key-value pair with a key that already exists, the existing value associated with that key will be replaced with the new value.
+
+3. **Value Access**:
+   - Values in a `Map` are accessed using their corresponding keys. This allows for efficient retrieval, insertion, and deletion of values based on keys.
+
+4. **Common Implementations**:
+   - **`HashMap`**: A hash table-based implementation of the `Map` interface. It provides constant-time performance for basic operations (add, remove, contains) assuming the hash function disperses elements properly. It does not guarantee any specific order of elements.
+   - **`LinkedHashMap`**: Extends `HashMap` and maintains a doubly-linked list of entries. This allows it to maintain insertion order or access order.
+   - **`TreeMap`**: A red-black tree-based implementation of the `Map` interface. It maintains the keys in a sorted order based on their natural ordering or a specified comparator.
+
+### **Basic Operations with `Map`**
+
+- **Put**: Add a key-value pair to the `Map`.
+- **Get**: Retrieve the value associated with a specific key.
+- **Remove**: Remove a key-value pair from the `Map` based on the key.
+- **ContainsKey**: Check if a specific key exists in the `Map`.
+- **ContainsValue**: Check if a specific value exists in the `Map`.
+- **KeySet**: Get a set of all keys in the `Map`.
+- **Values**: Get a collection of all values in the `Map`.
+- **EntrySet**: Get a set of all key-value pairs (entries) in the `Map`.
+
+### **Example Usage**
+
+Here’s an example of using `HashMap`:
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapExample {
+    public static void main(String[] args) {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Apple", 1);
+        map.put("Banana", 2);
+        map.put("Cherry", 3);
+
+        // Retrieve value for a key
+        System.out.println("Value for key 'Apple': " + map.get("Apple"));
+
+        // Remove a key-value pair
+        map.remove("Banana");
+
+        // Check if a key exists
+        System.out.println("Contains key 'Banana': " + map.containsKey("Banana"));
+
+        // Iterate over the map entries
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
+}
+```
+
+### **Summary**
+
+- **Interface**: `Map` is an interface in the Java Collections Framework.
+- **Key-Value Storage**: Stores data in key-value pairs.
+- **Key Uniqueness**: Keys are unique; values can be duplicated.
+- **Implementations**:
+  - **`HashMap`**: No specific order, fast operations.
+  - **`LinkedHashMap`**: Maintains insertion order.
+  - **`TreeMap`**: Maintains sorted order.
+
+`Map` is useful when you need to associate unique keys with values and efficiently perform operations based on these keys.

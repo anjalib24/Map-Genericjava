@@ -1,0 +1,40 @@
+In Java, to check if a key exists in a `Map`, you use the `containsKey` method. This method returns `true` if the `Map` contains a mapping for the specified key, and `false` otherwise.
+
+Here’s how you can use `containsKey` with different `Map` implementations:
+
+### **Example**
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapKeyCheckExample {
+    public static void main(String[] args) {
+        // Create a HashMap and add some key-value pairs
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Apple", 1);
+        map.put("Banana", 2);
+        map.put("Cherry", 3);
+
+        // Check if a key exists
+        String keyToCheck = "Banana";
+
+        if (map.containsKey(keyToCheck)) {
+            System.out.println("The map contains the key: " + keyToCheck);
+        } else {
+            System.out.println("The map does not contain the key: " + keyToCheck);
+        }
+    }
+}
+```
+
+### **Explanation**
+
+- **`map.containsKey(keyToCheck)`**: This method checks if the `Map` contains the specified key (`keyToCheck`). It returns `true` if the key is present and `false` if it is not.
+
+### **Summary**
+
+- **Method**: `containsKey(Object key)`
+- **Returns**: `true` if the `Map` contains the specified key; `false` otherwise.
+
+This method is supported by all implementations of the `Map` interface, including `HashMap`, `TreeMap`, `LinkedHashMap`, etc. It is a straightforward and efficient way to check for the presence of a key in a `Map`.
